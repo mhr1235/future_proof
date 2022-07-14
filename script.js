@@ -132,7 +132,7 @@
 		{
 			addX += mouseX
 			TweenMax.to( carousel, 1, { rotationY:addX, rotationX:mouseY, ease:Quint.easeOut } )
-			TweenMax.set( carousel, {z:-39000 } )
+			TweenMax.set( carousel, {z:mouseZ } )
 			fps.text( 'Framerate: ' + counter.tick() + '/60 FPS' )
 			
 			
