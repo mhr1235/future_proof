@@ -113,7 +113,8 @@
 		{
 			mouseX = -(-(window.innerWidth * .5)) * .0025;
 			mouseY = -(-(window.innerHeight * .5)) * .01;
-			mouseZ = -(radius) - (Math.abs(-(window.innerHeight * .5)) - 200);
+			//mouseZ = -(radius) - (Math.abs(-(window.innerHeight * .5)) - 200);
+			mouseZ = 200;
 		}
 		
 		// loops and sets the carousel 3d properties
