@@ -69,7 +69,10 @@
 			
 			// set mouse x and y props and looper ticker
 			window.addEventListener( "mousemove", onMouseMove, false );
-			window.addEventListener( "touchmove", onMouseMove, false );
+			//window.addEventListener( "touchmove", onMouseMove, false );
+			if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+	                   onMouseMove2();
+                        }
 			ticker = setInterval( looper, 1000/20 );			
 		}
 		
@@ -104,6 +107,13 @@
 			mouseX = -(-(window.innerWidth * .5) + event.pageX) * .0025;
 			mouseY = -(-(window.innerHeight * .5) + event.pageY ) * .01;
 			mouseZ = -(radius) - (Math.abs(-(window.innerHeight * .5) + event.pageY ) - 200);
+		}
+
+               function onMouseMove2()
+		{
+			mouseX = -(-(window.innerWidth * .5)) * .0025;
+			mouseY = -(-(window.innerHeight * .5)) * .01;
+			mouseZ = -(radius) - (Math.abs(-(window.innerHeight * .5)) - 200);
 		}
 		
 		// loops and sets the carousel 3d properties
