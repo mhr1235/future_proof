@@ -72,6 +72,7 @@
 			//window.addEventListener( "touchmove", onMouseMove, false );
 			if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
 	                   onMouseMove2();
+			   ticker = setInterval( looper2, 1000/20 );
                         }
 			ticker = setInterval( looper, 1000/20 );			
 		}
@@ -125,14 +126,17 @@
 			TweenMax.set( carousel, {z:mouseZ } )
 			fps.text( 'Framerate: ' + counter.tick() + '/60 FPS' )
 			
-			if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-	                   addX += mouseX
+			
+		}
+		function looper2()
+		{
+			addX += mouseX
 			TweenMax.to( carousel, 1, { rotationY:addX, rotationX:mouseY, ease:Quint.easeOut } )
 			TweenMax.set( carousel, {z:200 } )
 			fps.text( 'Framerate: ' + counter.tick() + '/60 FPS' )
-                        }
+			
+			
 		}
-		
 		function getRandomInt( $n )
 		{
 			return Math.floor((Math.random()*$n)+1);	
