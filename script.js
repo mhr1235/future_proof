@@ -113,8 +113,8 @@
 		{
 			mouseX = -(-(window.innerWidth * .5)) * .0025;
 			mouseY = -(-(window.innerHeight * .5)) * .01;
-			//mouseZ = -(radius) - (Math.abs(-(window.innerHeight * .5)) - 200);
-			mouseZ = 200;
+			mouseZ = -(radius) - (Math.abs(-(window.innerHeight * .5)) - 200);
+			
 		}
 		
 		// loops and sets the carousel 3d properties
@@ -123,7 +123,14 @@
 			addX += mouseX
 			TweenMax.to( carousel, 1, { rotationY:addX, rotationX:mouseY, ease:Quint.easeOut } )
 			TweenMax.set( carousel, {z:mouseZ } )
-			fps.text( 'Framerate: ' + counter.tick() + '/60 FPS' )	
+			fps.text( 'Framerate: ' + counter.tick() + '/60 FPS' )
+			
+			if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+	                   addX += mouseX
+			TweenMax.to( carousel, 1, { rotationY:addX, rotationX:mouseY, ease:Quint.easeOut } )
+			TweenMax.set( carousel, {z:200 } )
+			fps.text( 'Framerate: ' + counter.tick() + '/60 FPS' )
+                        }
 		}
 		
 		function getRandomInt( $n )
