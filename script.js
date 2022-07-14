@@ -72,7 +72,7 @@
 			//window.addEventListener( "touchmove", onMouseMove, false );
 			if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
 	                   onMouseMove2();
-			   ticker = setInterval( looper2, 1000/20 );
+			   //ticker = setInterval( looper2, 1000/20 );
                         }
 			ticker = setInterval( looper, 1000/20 );			
 		}
